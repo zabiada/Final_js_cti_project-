@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - LuxeHomes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <script src="main.js"></script>
+    <style>
+        :root {
+            --background-color: #f0f0f0;
+            --text-color: #333;
+            --card-background: #ffffff;
+            --card-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #ffffff;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .neumorphic {
+            background: var(--card-background);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .neumorphic:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        #map {
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .dark-mode {
+            --background-color: #333;
+            --text-color: #f0f0f0;
+            --card-background: #444;
+            --card-shadow: 10px 10px 20px #2a2a2a, -10px -10px 20px #5e5e5e;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+         .sticky-top {
+            top: 20px;
+        }
+        .top-nav {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+        }
+        .top-nav p {
+            margin-bottom: 0;
+            display: inline-block;
+            margin-right: 18px;
+            margin-left: 18px;
+        }
+        .top-nav a {
+            text-decoration: none;
+            color: inherit;
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .top-nav i,
+        .top-nav spa {
+            color: green;
+            vertical-align: middle;
+        }
+        .navbar {
+            box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+        }
+        .navbar-brand {
+            font-weight: 700;
+        }
+        .navbar img {
+            height: 60px;
+            width: 100px;
+            margin-left: 30px;
+
+        }
+        .navbar-brand span {
+            color: saddlebrown;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+  <!--    Navbar1-->
+
+    <nav class="top-nav" id="home">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <p>
+                        <a href="#">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span> 0795435456 </span></a>
+                    </p>
+                    <p>
+                        <a href="#">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>info@luxuryhomes.com</span></a>
+                    </p>
+                </div>
+                <div class="col-auto">
+                    <p>
+                        <a class="links" href="login.html">
+                            <i class="bi bi-person-fill"></i>
+                            <span> login </span></a>
+                    </p>
+                    <p>
+                        <a class="links" href="Register.html">
+                            <i class="bi bi-person-plus-fill"></i>
+                            <span>register</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navbar2-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <img src="img/android-chrome-512x512.png" alt=" ">
+            <a class="navbar-brand" href="#"> <span>LUXURY HOMES.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="listings.html">Listings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="Services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link ms-lg-2 " href="contact.html">Contact Us</a>
+                    </li>
+                    <li>
+                        <a class="nav-link ms-lg-2 " href="adminpanel.html">Admin panel</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="neumorphic mb-4 animate-fade-in">
+                    <h1 id="propertyTitle" class="mb-4"></h1>
+                    <div id="propertyGallery" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carouselInner"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#propertyGallery" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#propertyGallery" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="neumorphic mb-4 animate-fade-in">
+                    <h2>Property Details</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><i class="fas fa-dollar-sign feature-icon"></i>Price: <span id="propertyPrice"></span></p>
+                            <p><i class="fas fa-map-marker-alt feature-icon"></i>Location: <span id="propertyLocation"></span></p>
+                            <p><i class="fas fa-ruler-combined feature-icon"></i>Size: <span id="propertySize"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><i class="fas fa-bed feature-icon"></i>Bedrooms: <span id="propertyBedrooms"></span></p>
+                            <p><i class="fas fa-bath feature-icon"></i>Bathrooms: <span id="propertyBathrooms"></span></p>
+                            <p><i class="fas fa-home feature-icon"></i>Type: <span id="propertyType"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="neumorphic mb-4 animate-fade-in">
+                    <h2>Description</h2>
+                    <p id="propertyDescription"></p>
+                </div>
+                <div class="neumorphic mb-4 animate-fade-in">
+                    <h2>Location</h2>
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="neumorphic mb-4 animate-fade-in">
+                    <h2>Contact Agent</h2>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- footer -->
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4 ">
+                    <h4 class="text-uppercase mb-4 font-weight-bold text-warning">Luxury Homes Real Estate</h4>
+                    <p>Your trusted partner in finding the perfect home.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+                    <p> <a href="index.html" class="text-white">
+                            <span> Home </span></a> </p>
+                    <p> <a href="#" class="text-white">
+                            <span> listings </span></a> </p>
+                    <p> <a href="#" class="text-white">
+                            <span> About us </span></a> </p>
+                    <p> <a href="Services.html" class="text-white">
+                            <span>Services </span></a> </p>
+                    <p> <a href="#" class="text-white">
+                            <span> Contact us</span></a> </p>
+
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+                    <p><i class="bi bi-house-door-fill mr-3 "></i>123 real estate street</p>
+                    <p><i class="bi bi-book-fill mr-3"></i>cityville, state 12345</p>
+                    <p><i class="bi bi-telephone-fill mr-3"></i>phone:0795435456</p>
+                    <p><i class="bi bi-envelope-fill mr-3"></i>email:info@luxuryhomes.com</p>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>©2024 luxury homes All right reserved.</p>
+                    <a href="#" style="text-decoration: none;"></a>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="mailto:https://www.instagram.com/sh_jalali123?igsh=MTFvejhlcGlmbmd1NA=="
+                                    class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-youtube"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="mailto:https://www.linkedin.com/in/sharara-jalali-13a8702b9?trk=contact-info"
+                                    class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-linkedin"></i> </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-google"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    <script>
+        // Sample property data (in a real scenario, this would be fetched from a server)
+        const property = {
+            id: 1,
+            title: "Luxurious Beachfront Villa",
+            price: 2500000,
+            location: "Malibu, California",
+            size: "5,000 sq ft",
+            bedrooms: 5,
+            bathrooms: 4,
+            type: "Villa",
+            description: "Experience the epitome of luxury living in this stunning beachfront villa. Boasting breathtaking ocean views, this property features an open-concept living area, gourmet kitchen, and a private infinity pool. The master suite offers a spa-like bathroom and a private balcony overlooking the Pacific. With direct beach access and top-of-the-line finishes throughout, this villa is the perfect retreat for those seeking the ultimate in coastal living.",
+            images: [
+                "https://picsum.photos/1200/800?random=1",
+                "https://picsum.photos/1200/800?random=2",
+                "https://picsum.photos/1200/800?random=3",
+                "https://picsum.photos/1200/800?random=4"
+            ],
+            lat: 34.0259,
+            lng: -118.7798
+        };
+
+        // Populate property details
+        document.getElementById('propertyTitle').textContent = property.title;
+        document.getElementById('propertyPrice').textContent = `$${property.price.toLocaleString()}`;
+        document.getElementById('propertyLocation').textContent = property.location;
+        document.getElementById('propertySize').textContent = property.size;
+        document.getElementById('propertyBedrooms').textContent = property.bedrooms;
+        document.getElementById('propertyBathrooms').textContent = property.bathrooms;
+        document.getElementById('propertyType').textContent = property.type;
+        document.getElementById('propertyDescription').textContent = property.description;
+
+        // Populate image gallery
+        const carouselInner = document.getElementById('carouselInner');
+        property.images.forEach((img, index) => {
+            const carouselItem = document.createElement('div');
+            carouselItem.className = `carousel-item${index === 0 ? ' active' : ''}`;
+            carouselItem.innerHTML = `<img src="${img}" class="d-block w-100 gallery-img" alt="Property Image ${index + 1}">`;
+            carouselInner.appendChild(carouselItem);
+        });
+
+        // Initialize Google Maps
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: property.lat, lng: property.lng },
+                zoom: 15
+            });
+            new google.maps.Marker({
+                position: { lat: property.lat, lng: property.lng },
+                map: map,
+                title: property.title
+            });
+        }
+
+        // Call initMap when the Google Maps script is loaded
+        window.initMap = initMap;
+
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. An agent will contact you soon!');
+            this.reset();
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.createElement('button');
+        darkModeToggle.innerHTML = '🌙';
+        darkModeToggle.classList.add('btn', 'btn-outline-primary', 'position-fixed', 'bottom-0', 'end-0', 'm-3');
+        document.body.appendChild(darkModeToggle);
+
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '☀️';
+            } else {
+                darkModeToggle.innerHTML = '🌙';
+            }
+        });
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        // Get property ID from URL
+const urlParams = new URLSearchParams(window.location.search);
+const propertyId = urlParams.get('id');
+
+// Fetch property details (in a real scenario, this would be an API call)
+function fetchPropertyDetails(id) {
+    // Simulating an API call with setTimeout
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(property); // Using the sample property data for now
+        }, 500);
+    });
+}
+
+// // Populate property details
+// fetchPropertyDetails(propertyId).then(property => {
+//     document.getElementById('propertyTitle').textContent = property.title;
+//     document.getElementById('propertyPrice').textContent = `$${property.price.toLocaleString()}`;
+//     document.getElementById('propertyLocation').textContent = property.location;
+//     document.getElementById('propertySize').textContent = property.size;
+//     document.getElementById('propertyBedrooms').textContent = property.bedrooms;
+//     document.getElementById('propertyBathrooms').textContent = property.bathrooms;
+//     document.getElementById('propertyType').textContent = property.type;
+//     document.getElementById('propertyDescription').textContent = property.description;
+
+
+    </script>
+</body>
+</html>

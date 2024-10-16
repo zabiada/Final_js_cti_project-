@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings - LuxuryHomes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="main.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .filter-sidebar {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .property-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .badge-custom {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.5rem;
+        }
+        #map {
+            height: 300px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .sticky-top {
+            top: 20px;
+        }
+        .top-nav {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+        }
+        .top-nav p {
+            margin-bottom: 0;
+            display: inline-block;
+            margin-right: 18px;
+            margin-left: 18px;
+        }
+        .top-nav a {
+            text-decoration: none;
+            color: inherit;
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .top-nav i,
+        .top-nav spa {
+            color: green;
+            vertical-align: middle;
+        }
+        .navbar {
+            box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+        }
+        .navbar-brand {
+            font-weight: 700;
+        }
+        .navbar img {
+            height: 60px;
+            width: 100px;
+            margin-left: 30px;
+
+        }
+        .navbar-brand span {
+            color: saddlebrown;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--    Navbar1-->
+
+    <nav class="top-nav" id="home">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <p>
+                        <a href="#">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span> 0795435456 </span></a>
+                    </p>
+                    <p>
+                        <a href="#">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>info@luxuryhomes.com</span></a>
+                    </p>
+                </div>
+                <div class="col-auto">
+                    <p>
+                        <a class="links" href="login.html">
+                            <i class="bi bi-person-fill"></i>
+                            <span> login </span></a>
+                    </p>
+                    <p>
+                        <a class="links" href="Register.html">
+                            <i class="bi bi-person-plus-fill"></i>
+                            <span>register</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navbar2-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <img src="img/android-chrome-512x512.png" alt=" ">
+            <a class="navbar-brand" href="#"> <span>LUXURY HOMES.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="listings.html">Listings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-lg-2" href="Services.html">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link ms-lg-2 " href="contact.html">Contact Us</a>
+                    </li>
+                    <li>
+                        <a class="nav-link ms-lg-2 " href="adminpanel.html">Admin panel</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Property Listings</h1>
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="filter-sidebar sticky-top">
+                    <h4>Filters</h4>
+                    <form id="filterForm">
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Enter location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="priceRange" class="form-label">Price Range</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="number" class="form-control" id="minPrice" placeholder="Min">
+                                </div>
+                                <div class="col">
+                                    <input type="number" class="form-control" id="maxPrice" placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="propertyType" class="form-label">Property Type</label>
+                            <select class="form-select" id="propertyType">
+                                <option value="">All Types</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="house">House</option>
+                                <option value="commercial">Commercial</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bedrooms" class="form-label">Bedrooms</label>
+                            <select class="form-select" id="bedrooms">
+                                <option value="">Any</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Amenities</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="pool" id="poolCheck">
+                                <label class="form-check-label" for="poolCheck">Pool</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="gym" id="gymCheck">
+                                <label class="form-check-label" for="gymCheck">Gym</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="parking" id="parkingCheck">
+                                <label class="form-check-label" for="parkingCheck">Parking</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="btn-group" role="group" aria-label="View options">
+                        <button type="button" class="btn btn-outline-secondary active" id="gridView">
+                            <i class="fas fa-th-large"></i> Grid
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" id="listView">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <label for="sortOption" class="me-2">Sort by:</label>
+                        <select class="form-select" id="sortOption">
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="propertyListings" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Property listings will be dynamically inserted here -->
+                </div>
+                <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <h2 class="mb-4">Explore Properties on Map</h2>
+        <div id="map"></div>
+    </div>
+    <!-- footer -->
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4 ">
+                    <h4 class="text-uppercase mb-4 font-weight-bold text-warning">Luxury Homes
+                        Real Estate</h4>
+                    <p>Your trusted partner in finding the perfect home.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links
+                    </h5>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Home</a>
+                    </p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">listings</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">About
+                            us</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Services</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Contact
+                            us</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+                    <p><i class="bi bi-house-door-fill mr-3 "></i>123 real estate street</p>
+                    <p><i class="bi bi-book-fill mr-3"></i>cityville, state 12345</p>
+                    <p><i class="bi bi-telephone-fill mr-3"></i>phone:0795435456</p>
+                    <p><i class="bi bi-envelope-fill mr-3"></i>email:info@luxuryhomes.com</p>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>©2024 luxury homes All right reserved.</p>
+                    <a href="#" style="text-decoration: none;"></a>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-youtube"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-linkedin"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white" style="font-size:23px; "><i
+                                        class="bi bi-google"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
+    
+</body>
+</html>
